@@ -2,7 +2,7 @@
 setlocal
 
 :: ============================================================================
-:: PR-002 - Enterprise Co-management Recovery Automation
+:: PR-002 - Enterprise ConfigMgr to Co-management Recovery Automation
 :: Author  : Narasimha Rao Jagadam
 :: Purpose : Microsoft Entra ID Leave / Join Recovery
 :: Version : Repository Edition v1.0
@@ -11,7 +11,7 @@ setlocal
 set LOGFILE=%windir%\Temp\AAD_Rejoin.log
 
 echo ============================================================= >> "%LOGFILE%"
-echo Enterprise Co-management Recovery Started >> "%LOGFILE%"
+echo Enterprise ConfigMgr to Co-management Recovery Started >> "%LOGFILE%"
 echo Date: %DATE% %TIME% >> "%LOGFILE%"
 echo ============================================================= >> "%LOGFILE%"
 
