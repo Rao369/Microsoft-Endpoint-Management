@@ -21,13 +21,13 @@ This solution automates the cleanup process using Microsoft Intune Proactive Rem
 
 ## Detection Logic
 
-The detection script checks for the presence of common MECM/SCCM client components, including:
+The detection script verifies whether legacy MECM/SCCM components remain on the device by checking:
 
-* Configuration Manager installation folders
-* CCM client executable
-* Start Menu shortcuts
+- SCCM installation folder
+- CCMExec executable
+- Microsoft Configuration Manager Start Menu folder
 
-If any components are detected, Intune triggers the remediation script.
+If any component exists, the script returns Exit Code 1, allowing Microsoft Intune Proactive Remediation to initiate the cleanup process.
 
 ## Remediation Activities
 
