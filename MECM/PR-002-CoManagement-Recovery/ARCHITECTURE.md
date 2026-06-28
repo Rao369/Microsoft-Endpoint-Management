@@ -1,14 +1,14 @@
-# Enterprise Recovery Workflow
+# Enterprise ConfigMgr to Co-management Recovery Workflow
 
 ```text
-                    Enterprise Co-management Recovery
+                    Enterprise ConfigMgr to Co-management 
 
 +--------------------------------------------------------------+
 |                      Windows Device                           |
 +--------------------------------------------------------------+
                            |
                            v
-              Device remains Co-managed
+              Device remains Config-Mgr
                            |
                            v
                 Validate dsregcmd /status
@@ -39,5 +39,5 @@
                Validate Device Health
                            |
                            v
-        Device Successfully Managed by Intune
+        Device Successfully Managed by Co-Managed
 ```
