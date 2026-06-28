@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## Version 1.0 (Production)
+## Original Production Solution
 
 ### Features
 
@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## Version 2.0 (GitHub Release)
+## Repository Edition
 
 ### Improvements
 
@@ -31,7 +31,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## Planned Version 3.0
+## Future Enhancements
 
 ### Future Enhancements
 
