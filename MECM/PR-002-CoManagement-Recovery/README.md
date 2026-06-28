@@ -1,4 +1,4 @@
-# PR-002 – Enterprise Co-management Recovery Automation
+# PR-002 – Enterprise ConfigMgr to Co-management Recovery
 
 ## Overview
 
