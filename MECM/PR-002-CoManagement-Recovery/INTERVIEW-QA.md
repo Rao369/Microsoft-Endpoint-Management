@@ -2,7 +2,7 @@
 
 ## Q1. What problem did this project solve?
 
-During an enterprise migration from MECM Co-management to Microsoft Intune, approximately 580 devices remained in a Co-managed state instead of transitioning to full Intune management.
+During an enterprise migration from MECM Config-Mgr to Co-management, approximately 580 devices remained in a Config-Mgr state instead of transitioning to Co-Managed.
 
 ---
 
@@ -27,7 +27,7 @@ The recovery workflow included:
 - Microsoft Entra Join
 - SCCM Client Reinstallation
 - Device Restart
-- Validation of Intune Management
+- Validation of Co-Managed
 
 ---
 
