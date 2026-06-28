@@ -2,7 +2,7 @@
 
 ## Project
 
-PR-002 – Enterprise Co-management Recovery Automation
+PR-002 – Enterprise ConfigMgr to Co-management Recovery Automation
 
 ---
 
@@ -26,7 +26,7 @@ The package performs the following actions:
 2. Create a scheduled task for Microsoft Entra Join
 3. Allow Configuration Manager client reinstallation
 4. Restart the device (if required)
-5. Validate successful transition to Intune management
+5. Validate successful transition to Co-Managed
 
 ---
 
@@ -47,7 +47,7 @@ The package performs the following actions:
 4. Validate recovery.
 5. Deploy to production devices.
 6. Monitor deployment status.
-7. Confirm devices transition to Intune management.
+7. Confirm devices transition to Co-Managed.
 
 ---
 
@@ -56,7 +56,7 @@ The package performs the following actions:
 - Microsoft Entra ID Joined = YES
 - Configuration Manager Client installed
 - Device synchronized successfully
-- Device reported as Intune managed
+- Device reported as Co-Managed
 - No deployment errors
 
 ---
