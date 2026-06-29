@@ -1,0 +1,9 @@
+| Certificate Status                    | Count |
+| ------------------------------------- | ----: |
+| CERTS ACTIVE + Secure Boot Enabled    |   683 |
+| CERTS ACTIVE + Secure Boot Disabled   |    15 |
+| CERTS INACTIVE + Secure Boot Enabled  |   998 |
+| CERTS INACTIVE + Secure Boot Disabled |    38 |
+| CERTS MISSING + Secure Boot Enabled   |  1549 |
+| CERTS MISSING + Secure Boot Disabled  |   120 |
+| CERTS MISSING + Secure Boot Unknown   |     7 |
