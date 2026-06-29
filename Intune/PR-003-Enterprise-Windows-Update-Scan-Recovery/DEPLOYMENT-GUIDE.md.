@@ -1,0 +1,206 @@
+# DEPLOYMENT-GUIDE.md
+
+# PR-003 – Enterprise Windows Update Scan Recovery
+
+## Deployment Guide
+
+This document describes the recommended deployment method for the **Enterprise Windows Update Scan Recovery** solution using **Microsoft Intune Proactive Remediations**.
+
+---
+
+# Overview
+
+The solution detects Windows devices that are no longer reporting recent Windows Update scan activity and performs a lightweight recovery process to restore Windows Update for Business (WUfB) reporting.
+
+The solution was designed for enterprise environments to improve patch compliance reporting without performing disruptive Windows Update resets.
+
+---
+
+# Supported Platforms
+
+* Windows 10
+* Windows 11
+* Microsoft Entra ID Joined devices
+* Microsoft Intune managed devices
+* Windows Update for Business (WUfB)
+
+---
+
+# Deployment Method
+
+**Platform**
+
+Microsoft Intune
+
+**Feature**
+
+Endpoint Analytics → Proactive Remediations
+
+---
+
+# Deployment Package
+
+The Proactive Remediation package contains:
+
+| File            | Purpose                                   |
+| --------------- | ----------------------------------------- |
+| Detection.ps1   | Detects Windows Update scan health issues |
+| Remediation.ps1 | Performs staged Windows Update recovery   |
+
+---
+
+# Detection Logic
+
+The detection script validates:
+
+* Recent Windows Update Client events
+* Windows Update scan freshness
+* Windows Update service status
+* BITS service
+* Update Orchestrator Service
+
+If an issue is detected:
+
+**Exit Code = 1**
+
+Microsoft Intune automatically initiates remediation.
+
+If the device is healthy:
+
+**Exit Code = 0**
+
+No remediation is performed.
+
+---
+
+# Remediation Workflow
+
+The remediation performs the following actions:
+
+1. Check for pending reboot
+2. Validate Windows Update services
+3. Correct disabled service startup types
+4. Start required Windows Update services
+5. Refresh Windows Update settings
+6. Trigger Windows Update scan
+7. Trigger Microsoft Intune synchronization
+8. Validate Windows Update event creation
+9. Write remediation log
+
+---
+
+# Recommended Assignment
+
+Assign the remediation package to:
+
+* Windows Update for Business devices
+* Windows 10 devices
+* Windows 11 devices
+* Monthly Patch Compliance Device Collection
+* Dynamic Microsoft Entra device groups
+
+Avoid assigning to:
+
+* Windows Server
+* Shared kiosk devices (unless validated)
+* Test devices outside the patch management process
+
+---
+
+# Recommended Schedule
+
+| Setting       | Recommendation |
+| ------------- | -------------- |
+| Run Frequency | Daily          |
+| Run Context   | System         |
+| Schedule      | Every 24 Hours |
+
+During monthly patching, the schedule can be temporarily increased to improve recovery of devices reporting **"Device not scanned."**
+
+---
+
+# Monitoring
+
+Monitor deployment success using:
+
+## Microsoft Intune
+
+* Device Status
+* Remediation Status
+* Detection Status
+
+## Windows Event Viewer
+
+```
+Applications and Services Logs
+
+Microsoft
+
+Windows
+
+WindowsUpdateClient
+
+Operational
+```
+
+## Log File
+
+```
+C:\Windows\Temp\PR003-WindowsUpdateScanRecovery.log
+```
+
+---
+
+# Success Criteria
+
+A successful remediation should result in:
+
+* Windows Update services running
+* Recent Windows Update Client event generated
+* Microsoft Intune synchronization initiated
+* Device reporting Windows Update scan information
+* Device no longer appearing as **"Device not scanned"** in Windows Update for Business reports
+
+---
+
+# Rollback
+
+This remediation performs only lightweight Windows Update recovery.
+
+It does **not**:
+
+* Reset SoftwareDistribution
+* Reset Catroot2
+* Delete Windows Update history
+* Remove update cache
+* Modify Windows Update policies
+
+No rollback procedure is normally required.
+
+---
+
+# Production Results
+
+| Metric                                 | Before | After |
+| -------------------------------------- | -----: | ----: |
+| Devices reporting "Device not scanned" |   ~800 |  ~150 |
+| Enterprise Patch Compliance            |    91% |   97% |
+
+The solution became part of the monthly Windows servicing process and significantly improved Windows Update reporting accuracy across the enterprise.
+
+---
+
+# Best Practices
+
+* Pilot on a small device group before broad deployment.
+* Review remediation results after each monthly patch cycle.
+* Monitor Windows Update for Business reports to identify new devices requiring remediation.
+* Combine this solution with telemetry and Windows Update policy remediation to maximize compliance.
+
+---
+
+# Author
+
+**Narasimha Rao Jagadam**
+
+Senior Microsoft Endpoint Management Engineer
