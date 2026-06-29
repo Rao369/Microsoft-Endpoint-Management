@@ -7,3 +7,17 @@
 | CERTS MISSING + Secure Boot Enabled   |  1549 |
 | CERTS MISSING + Secure Boot Disabled  |   120 |
 | CERTS MISSING + Secure Boot Unknown   |     7 |
+
+## Initial Enterprise Assessment
+
+The initial enterprise assessment categorized devices based on Secure Boot status and certificate readiness.
+
+The assessment identified devices with:
+
+- Certificates Active
+- Certificates Inactive
+- Certificates Missing
+- Secure Boot Enabled
+- Secure Boot Disabled
+
+This assessment was used to determine the appropriate remediation strategy based on Microsoft's guidance.
