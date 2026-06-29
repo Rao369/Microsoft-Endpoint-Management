@@ -1,10 +1,49 @@
 ## Project Evidence
 
-This repository includes implementation evidence from a production enterprise environment.
+### 1. Initial Enterprise Assessment
 
-| Screenshot | Description |
-|------------|-------------|
-| Initial Assessment | Enterprise Secure Boot certificate readiness assessment |
-| Intune Deployment | Audit and Remediation Proactive Remediation packages |
-| Compliance Improvement | Before and after Secure Boot compliance |
-| Microsoft Guidance | Microsoft Secure Boot Playbook reference |
+The initial enterprise assessment categorized devices based on Secure Boot status and certificate readiness.
+
+The assessment identified devices with:
+
+* Certificates Active
+* Certificates Inactive
+* Certificates Missing
+* Secure Boot Enabled
+* Secure Boot Disabled
+
+This assessment was used to determine the appropriate remediation strategy based on Microsoft's guidance.
+
+![Initial Assessment](Images/01-Initial-SecureBoot-Assessment.png)
+
+---
+
+### 2. Intune Proactive Remediation Deployment
+
+The enterprise solution consisted of two Microsoft Intune Proactive Remediation packages:
+
+* **Windows Secure Boot Certificate Readiness (2026)** – Audit package
+* **PR_SecureBoot_Cert_Enablement_Fix** – Remediation package
+
+Both packages were deployed through Microsoft Intune to assess Secure Boot readiness and automatically configure eligible devices.
+
+![Intune PR Deployment](Images/02-Intune-Proactive-Remediation-Deployment.png)
+
+---
+
+### 3. Secure Boot Compliance Improvement
+
+Following deployment and Windows Update servicing, Secure Boot certificate compliance improved significantly across the enterprise.
+
+The dashboard below compares the initial compliance status with the final compliance after remediation.
+
+![Compliance](Images/03-SecureBoot-Compliance.png)
+
+---
+
+### 4. Microsoft Guidance
+
+This implementation followed Microsoft's official guidance for Secure Boot Certificate expiration (2026), specifically the recommended Option 2 deployment model.
+
+![Microsoft Guidance](Images/04-Microsoft-Guidance.png)
+https://techcommunity.microsoft.com/blog/windows-itpro-blog/secure-boot-playbook-for-certificates-expiring-in-2026/4469235#community-4469235-_option2
