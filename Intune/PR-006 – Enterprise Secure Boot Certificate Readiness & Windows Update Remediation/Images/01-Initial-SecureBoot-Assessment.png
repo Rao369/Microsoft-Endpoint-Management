@@ -1,23 +1,17 @@
-| Certificate Status                    | Count |
-| ------------------------------------- | ----: |
-| CERTS ACTIVE + Secure Boot Enabled    |   683 |
-| CERTS ACTIVE + Secure Boot Disabled   |    15 |
-| CERTS INACTIVE + Secure Boot Enabled  |   998 |
-| CERTS INACTIVE + Secure Boot Disabled |    38 |
-| CERTS MISSING + Secure Boot Enabled   |  1549 |
-| CERTS MISSING + Secure Boot Disabled  |   120 |
-| CERTS MISSING + Secure Boot Unknown   |     7 |
+## 1. Initial Enterprise Assessment
 
-## Initial Enterprise Assessment
+An enterprise-wide assessment was performed to evaluate Secure Boot certificate readiness across approximately **3,800 Windows devices**.
 
-The initial enterprise assessment categorized devices based on Secure Boot status and certificate readiness.
+The assessment identified the following certificate states:
 
-The assessment identified devices with:
+| Certificate Status                    | Device Count |
+| ------------------------------------- | -----------: |
+| CERTS ACTIVE + Secure Boot Enabled    |          683 |
+| CERTS ACTIVE + Secure Boot Disabled   |           15 |
+| CERTS INACTIVE + Secure Boot Enabled  |          998 |
+| CERTS INACTIVE + Secure Boot Disabled |           38 |
+| CERTS MISSING + Secure Boot Enabled   |         1549 |
+| CERTS MISSING + Secure Boot Disabled  |          120 |
+| CERTS MISSING + Secure Boot Unknown   |            7 |
 
-- Certificates Active
-- Certificates Inactive
-- Certificates Missing
-- Secure Boot Enabled
-- Secure Boot Disabled
-
-This assessment was used to determine the appropriate remediation strategy based on Microsoft's guidance.
+This assessment was used to determine the appropriate remediation strategy based on Microsoft's Secure Boot Certificate Expiration (2026) guidance.
