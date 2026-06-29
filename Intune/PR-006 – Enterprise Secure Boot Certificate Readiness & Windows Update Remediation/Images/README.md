@@ -14,7 +14,6 @@ The assessment identified devices with:
 
 This assessment was used to determine the appropriate remediation strategy based on Microsoft's guidance.
 
-![Initial Assessment](Images/01-Initial-SecureBoot-Assessment.png)
 
 ---
 
@@ -27,7 +26,6 @@ The enterprise solution consisted of two Microsoft Intune Proactive Remediation 
 
 Both packages were deployed through Microsoft Intune to assess Secure Boot readiness and automatically configure eligible devices.
 
-![Intune PR Deployment](Images/02-Intune-Proactive-Remediation-Deployment.png)
 
 ---
 
@@ -37,13 +35,11 @@ Following deployment and Windows Update servicing, Secure Boot certificate compl
 
 The dashboard below compares the initial compliance status with the final compliance after remediation.
 
-![Compliance](Images/03-SecureBoot-Compliance.png)
 
 ---
 
 ### 4. Microsoft Guidance
 
 This implementation followed Microsoft's official guidance for Secure Boot Certificate expiration (2026), specifically the recommended Option 2 deployment model.
-
-![Microsoft Guidance](Images/04-Microsoft-Guidance.png)
 https://techcommunity.microsoft.com/blog/windows-itpro-blog/secure-boot-playbook-for-certificates-expiring-in-2026/4469235#community-4469235-_option2
+https://support.microsoft.com/en-us/topic/windows-secure-boot-certificate-expiration-and-ca-updates-7ff40d33-95dc-4c3c-8725-a9b95457578e
